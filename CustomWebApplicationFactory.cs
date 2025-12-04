@@ -42,7 +42,6 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
                 WithReseed = true          // resets identity columns
             }).Result;
 
-            SeedData.Initialize(db);
         });
     }
 

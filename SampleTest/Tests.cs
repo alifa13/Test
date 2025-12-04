@@ -22,6 +22,8 @@ public class Tests : TestBase
     public async Task CreateUser_Should_Return_ExpectedStatus(
         string name, string email, int expectedStatus)
     {
+
+        //Act
         // Seed an existing user (for duplicate email test)
         if (email == "existing@example.com")
         {
@@ -33,6 +35,7 @@ public class Tests : TestBase
 
         var response = await Client.PostAsJsonAsync("/api/users", request);
 
+        //Assert
         ((int)response.StatusCode).Should().Be(expectedStatus);
     }
 }
